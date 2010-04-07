@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using CouchDbDemo.Models;
+using CouchDbDemo.Shared;
+using CouchDbDemo.Shared.Clothes;
 using RedBranch.Hammock;
 
 
@@ -84,7 +86,8 @@ namespace DbWeb.Controllers
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult EditClothingType(string id)
         {
-            ClothingTypeDto clothingTypeDto = Mapper.Map<ClothingType, ClothingTypeDto>(_session.Load<ClothingType>(id));
+            ClothingType clothingType = _session.Load<ClothingType>(id);
+            ClothingTypeDto clothingTypeDto = Mapper.Map<ClothingType, ClothingTypeDto>(clothingType);
             clothingTypeDto.Id = id;
             return View(clothingTypeDto);
         }

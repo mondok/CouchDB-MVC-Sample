@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CouchDbDemo.Models
+namespace CouchDbDemo.Shared.Clothes
 {
     public class ClothingType
     {
@@ -20,6 +20,12 @@ namespace CouchDbDemo.Models
         public ClothingType()
         {
             this.EntityType = "clothes";
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Color: {0}, Name: {1}, Description: {2}, Date Purchased: {3}, Entity Type: {4}", this.Color, this.Name,
+                                 this.Description, this.DatePurchased, this.EntityType);
         }
     }
 }

@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<IEnumerable<CouchDbDemo.Models.ClothingColor>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<CouchDbDemo.Shared.Clothes.ClothingColor>>" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Colors Breakdown</title>
-</head>
-<body>
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    Colors Breakdown
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<h2>Colors Breakdown</h2>
     <table>
         <tr>
             <th>
@@ -30,5 +29,4 @@
     <p>
         <%= Html.ActionLink("Back to Index","Index") %>
     </p>
-</body>
-</html>
+</asp:Content>

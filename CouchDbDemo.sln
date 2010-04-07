@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouchDbDemo", "CouchDbDemo\CouchDbDemo.csproj", "{082F7F12-D119-4ED8-9944-452697A7CED0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouchDbDemo.Sandbox", "CouchDbDemo.Sandbox\CouchDbDemo.Sandbox.csproj", "{ECD7BB7B-878C-4548-9627-71258F0AC2E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouchDbDemo.Shared", "CouchDbDemo.Shared\CouchDbDemo.Shared.csproj", "{D1AA4746-3A59-4333-88B8-68098E88BBC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{082F7F12-D119-4ED8-9944-452697A7CED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{082F7F12-D119-4ED8-9944-452697A7CED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{082F7F12-D119-4ED8-9944-452697A7CED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD7BB7B-878C-4548-9627-71258F0AC2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD7BB7B-878C-4548-9627-71258F0AC2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD7BB7B-878C-4548-9627-71258F0AC2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD7BB7B-878C-4548-9627-71258F0AC2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1AA4746-3A59-4333-88B8-68098E88BBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1AA4746-3A59-4333-88B8-68098E88BBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1AA4746-3A59-4333-88B8-68098E88BBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1AA4746-3A59-4333-88B8-68098E88BBC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

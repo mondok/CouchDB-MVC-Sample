@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<CouchDbDemo.Models.ClothingTypeDto>" %>
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<CouchDbDemo.Models.ClothingTypeDto>" MasterPageFile="~/Views/Shared/Site.Master" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Edit Clothing Article</title>
-</head>
-<body>
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    Edit Clothing Article
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<h2>Edit Clothing Article</h2>
     <% using (Html.BeginForm())
        {%>
     <%= Html.ValidationSummary(true) %>
@@ -55,5 +54,4 @@
     <div>
         <%= Html.ActionLink("Back to List", "Index") %>
     </div>
-</body>
-</html>
+</asp:Content>
