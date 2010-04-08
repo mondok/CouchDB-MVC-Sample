@@ -31,10 +31,13 @@ namespace CouchDbDemo.Sandbox
 
             _session = _connection.CreateSession(Config.PET_DB_NAME);
 
+            Debug.WriteLine("-- Running CreatePets --" + Environment.NewLine);
             CreatePets();
 
+            Debug.WriteLine("-- Running CreateMapFunctions --" + Environment.NewLine);
             CreateMapFunctions();
 
+            Debug.WriteLine("-- Running QueryForOwnerAndPets --" + Environment.NewLine);
             QueryForOwnerAndPets();
         }
 
@@ -44,9 +47,9 @@ namespace CouchDbDemo.Sandbox
 
             Query<object>.Spec petResult = petJoin.From(CreateToken("[\"Sam\"]")).To(CreateToken("[\"Sam\",{}]"));
 
-            Debug.WriteLine(string.Format("CouchDB uri is {0}", petResult));
+            Debug.WriteLine(string.Format("CouchDB uri is {0}" + Environment.NewLine, petResult));
 
-            Debug.Write(string.Format("CouchDB uri is {0}", petResult));
+            Debug.Write(string.Format("CouchDB uri is {0}" + Environment.NewLine, petResult));
 
             foreach (Query<object>.Result.Row row in petResult.Execute().Rows)
             {
@@ -54,13 +57,13 @@ namespace CouchDbDemo.Sandbox
                 {
                     Owner owner = (Owner) row.Entity;
 
-                    Debug.WriteLine(owner.ToString());
+                    Debug.WriteLine(owner.ToString() + Environment.NewLine);
                 }
                 else
                 {
                     Pet pet = (Pet) row.Entity;
 
-                    Debug.WriteLine(pet.ToString());
+                    Debug.WriteLine(pet.ToString() + Environment.NewLine);
                 }
             }
             Console.WriteLine("Press a key to continue");

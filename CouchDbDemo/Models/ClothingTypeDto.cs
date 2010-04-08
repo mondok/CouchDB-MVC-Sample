@@ -22,6 +22,7 @@ namespace CouchDbDemo.Models
         public ClothingTypeDto()
         {
             this.EntityType = "clothes";
+            this.DatePurchased = DateTime.Now;
         }
     }
 }

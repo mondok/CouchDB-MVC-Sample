@@ -31,10 +31,13 @@ namespace CouchDbDemo.Sandbox
 
             _session = _connection.CreateSession(Config.CLOTHES_DB_NAME);
 
+            Debug.WriteLine("-- Running CreateClothes --" + Environment.NewLine);
             CreateClothes();
 
+            Debug.WriteLine("-- Running CreateMapFunctions --" + Environment.NewLine);
             CreateMapFunctions();
 
+            Debug.WriteLine("-- Running QueryByKey --" + Environment.NewLine);
             QueryByKey();
         }
 
@@ -93,16 +96,15 @@ namespace CouchDbDemo.Sandbox
         {
             string mapFunction = File.ReadAllText("Scripts/clothing-color-search-map.js");
 
-            DesignDocument designDoc = new DesignDocument
-                                           {
-                                               Language = "javascript",
-                                               Views = new Dictionary<string, View>
-                                                           {
-                                                               {"color-search", new View {Map = mapFunction}}
-                                                           }
-                                           };
+            DesignDocument designDocument = new DesignDocument();
 
-            _session.Save(designDoc, "_design/clothes-queries-by-color");
+            designDocument.Language = "javascript";
+
+            designDocument.Views = new Dictionary<string, View>();
+
+            designDocument.Views.Add("color-search", new View() { Map = mapFunction });
+
+            _session.Save(designDocument, "_design/clothes-queries-by-color");
         }
 
         private void QueryByKey()
@@ -116,7 +118,7 @@ namespace CouchDbDemo.Sandbox
             {
                 ClothingType clothingType = result.Entity;
 
-                Debug.WriteLine(clothingType.ToString());
+                Debug.WriteLine(clothingType.ToString() + Environment.NewLine);
             }
             Console.WriteLine("Press a key to continue");
 

@@ -47,24 +47,14 @@ namespace CouchDbDemo
             string colorsReduce =
                 File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/colors-reduce.js"));
 
-            session.Save(
-                 new DesignDocument
-                 {
-                     Language = "javascript",
-                     Views = new Dictionary<string, View>
-                                     {
-                                        { "all-clothes", new View {
-                                            Map = allClothesScript
-                                        }},
-                                        { "colors-breakdown", new View
-                                                        {
-                                                            Map = colorsMap,
-                                                            Reduce = colorsReduce
-                                                        }}
-                                     }
-                 },
-                  "_design/clothes-queries"
-             );
+            DesignDocument designDocument = new DesignDocument();
+            designDocument.Language = "javascript";
+            designDocument.Views = new Dictionary<string, View>();
+
+            designDocument.Views.Add("all-clothes", new View { Map = allClothesScript });
+            designDocument.Views.Add("colors-breakdown", new View { Map = colorsMap, Reduce = colorsReduce });
+
+            session.Save(designDocument, "_design/clothes-queries");
             //}
         }
 
