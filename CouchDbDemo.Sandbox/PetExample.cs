@@ -49,7 +49,7 @@ namespace CouchDbDemo.Sandbox
 
             Debug.WriteLine(string.Format("CouchDB uri is {0}" + Environment.NewLine, petResult));
 
-            Debug.Write(string.Format("CouchDB uri is {0}" + Environment.NewLine, petResult));
+            Debug.WriteLine(string.Format("CouchDB uri is {0}" + Environment.NewLine, petResult));
 
             foreach (Query<object>.Result.Row row in petResult.Execute().Rows)
             {
